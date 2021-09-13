@@ -1,0 +1,19 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.active {
+  text-decoration: underline;
+}
+
+.custom-active {
+  text-decoration: underline;
+  color: red;
+  font-weight: bold;
+}  
+
+.nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}

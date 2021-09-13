@@ -1,0 +1,1 @@
+if(Meteor.isServer) import '../imports/startup';

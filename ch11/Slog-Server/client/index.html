@@ -1,0 +1,280 @@
+<head>
+  <title>slog-server</title>
+</head>
+
+<body>
+  <h1>API 설명</h1>
+  <h2 id="1-auth-">1. auth(인증관련)</h2>
+  <h3 id="1-1-login-">1-1. login(로그인)</h3>
+  <ul>
+  <li>method: POST </li>
+  <li>url: localhost:3000/api/login</li>
+  <li>bodyParams: email, password</li>
+  </ul>
+  <h3 id="1-2-logout-">1-2. logout(로그아웃)</h3>
+  <ul>
+  <li>method: POST</li>
+  <li>url: localhost:3000/api/logout</li>
+  <li>header: X-Auth-Token</li>
+  </ul>
+  <h3 id="1-3-register-">1-3. register(가입)</h3>
+  <ul>
+  <li>method: POST</li>
+  <li>url: localhost:3000/api/user</li>
+  <li>bodyParams: email, password</li>
+  </ul>
+  <h3 id="1-4-user">1-4. user</h3>
+  <ul>
+  <li>method: GET</li>
+  <li>localhost:3000/api/user</li>
+  <li>header: X-Auth-Token</li>
+  <li>response: 
+    <pre>
+<code>
+{
+  <span class="hljs-attribute">_id</span>: <span class="hljs-string">"###"</span>,
+  email: <span class="hljs-string">"###"</span>
+}
+</code>
+    </pre>
+  </li>
+  </ul>
+
+  <h2 id="2-article-">2. article(게시글)</h2>
+<h3 id="2-1-article-">2-1. article 게시글 작성</h3>
+<ul>
+  <li>method: POST</li>
+  <li>url: localhost:3000/api/article</li>
+  <li>auth: true</li>
+  <li>header: X-Auth-Token</li>
+  <li>bodyParams: content</li>
+  <li>response: 
+    <pre>
+      <code>
+{
+  <span class="hljs-symbol">userId:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">userName:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">content:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">createdAt:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">commentCount:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">likeCount:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">likeUsers:</span> [<span class="hljs-string">"###"</span>],
+}
+      </code>
+    </pre>
+  </li>
+</ul>
+<h3 id="2-2-article-">2-2. article 게시글 수정</h3>
+<ul>
+<li>method: PUT</li>
+<li>url: localhost:3000/api/article</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>bodyParams: content, _id</li>
+<li>response: 
+  <pre>
+    <code>
+{
+  <span class="hljs-symbol">userId:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">userName:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">content:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">createdAt:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">commentCount:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">likeCount:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">likeUsers:</span> [<span class="hljs-string">"###"</span>],
+}
+
+    </code>
+  </pre>
+</li>
+</ul>
+<h3 id="2-3-article-">2-3. article 게시글 삭제</h3>
+<ul>
+<li>method: DELETE</li>
+<li>url: localhost:3000/api/article</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>bodyParams: _id</li>
+</ul>
+<h3 id="2-4-articles-">2-4. articles 게시글 목록</h3>
+<ul>
+<li>method: GET</li>
+<li>url: localhost:3000/api/articles/:currentPage</li>
+<li>auth: 선택</li>
+<li>header: X-Auth-Token(선택)</li>
+<li>urlParams: currentPage</li>
+<li>response: 
+  <pre>
+    <code>
+{
+  articleLis<span class="hljs-variable">t:</span> [
+    {
+      userId: <span class="hljs-string">"###"</span>,
+      userName: <span class="hljs-string">"###"</span>,
+      conten<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      createdA<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      commentCoun<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      likeCoun<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      likeUser<span class="hljs-variable">s:</span> [<span class="hljs-string">"###"</span>],
+    },
+    ...
+  ],
+  totalPage: ###,
+  menuPopup:<span class="hljs-string">'###'</span>,
+  editMode:<span class="hljs-string">'###'</span>
+}
+
+    </code>
+  </pre>
+</li>
+</ul>
+<h3 id="2-5-articles-">2-5. 내가 작성한 articles 게시글 목록</h3>
+<ul>
+<li>method: GET</li>
+<li>url: localhost:3000/api/articles/my/:currentPage</li>
+<li>auth: 선택</li>
+<li>header: X-Auth-Token(선택)</li>
+<li>urlParams: currentPage</li>
+<li>response: <pre><code>{
+articleLis<span class="hljs-variable">t:</span> [
+  {
+    userId: <span class="hljs-string">"###"</span>,
+    userName: <span class="hljs-string">"###"</span>,
+    conten<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+    createdA<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+    commentCoun<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+    likeCoun<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+    likeUser<span class="hljs-variable">s:</span> [<span class="hljs-string">"###"</span>],
+  },
+  ...
+],
+totalPage: ###,
+menuPopup:<span class="hljs-string">'###'</span>,
+editMode:<span class="hljs-string">'###'</span>
+}
+</code></pre></li>
+</ul>
+<h3 id="2-5-article-">2-6. article 게시글 한개</h3>
+<ul>
+<li>method: GET</li>
+<li>url: localhost:3000/api/articles/:_id</li>
+<li>auth: false</li>
+<li>urlParams: _id</li>
+<li>response: 
+  <pre>
+    <code>
+{
+  <span class="hljs-symbol">userId:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">userName:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">content:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">createdAt:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">commentCount:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">likeCount:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">likeUsers:</span> [<span class="hljs-string">"###"</span>],
+}
+    </code>
+  </pre>
+</li>
+</ul>
+<h2 id="3-like">3. like</h2>
+<h3 id="3-1-like-">3-1. like 표시</h3>
+<ul>
+<li>method: PUT</li>
+<li>url: localhost:3000/api/like</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>bodyParams: articleId</li>
+</ul>
+<h3 id="3-2-like-">3-2. like 해제</h3>
+<ul>
+<li>method: PUT</li>
+<li>url: localhost:3000/api/cancellike</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>bodyParams: articleId</li>
+</ul>
+<h3 id="3-3-likes">3-3. likes</h3>
+<ul>
+<li>method: GET</li>
+<li>url: localhost:3000/api/likes/:currentPage</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>urlParam: currentPage</li>
+<li>response: 
+  <pre>
+    <code>
+{
+  articleLis<span class="hljs-variable">t:</span> [
+    {
+      userId: <span class="hljs-string">"###"</span>,
+      userName: <span class="hljs-string">"###"</span>,
+      conten<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      createdA<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      commentCoun<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      likeCoun<span class="hljs-variable">t:</span> <span class="hljs-string">"###"</span>,
+      likeUser<span class="hljs-variable">s:</span> [<span class="hljs-string">"###"</span>],
+    },
+    ...
+  ],
+  totalPage: ###,
+  menuPopup:<span class="hljs-string">'###'</span>,
+  editMode:<span class="hljs-string">'###'</span>
+}
+
+    </code>
+  </pre>
+</li>
+</ul>
+
+<h2 id="4-comment">4. comment</h2>
+<h3 id="4-1-comment-">4-1. comment 추가</h3>
+<ul>
+<li>method: POST</li>
+<li>url: localhost:3000/api/comments</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>bodyParams: articleId, content</li>
+<li>response: 
+  <pre>
+    <code>
+{
+  <span class="hljs-symbol">userId:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">userName:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">articleId:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">content:</span> <span class="hljs-string">"###"</span>,
+  <span class="hljs-symbol">createdAt:</span> <span class="hljs-string">"###"</span>,
+}
+
+  </code>
+</pre>
+</li>
+</ul>
+<h3 id="4-2-comment-">4-2. comment 삭제</h3>
+<ul>
+<li>method: DELETE</li>
+<li>url: localhost:3000/api/comments</li>
+<li>auth: true</li>
+<li>header: X-Auth-Token</li>
+<li>bodyParams: _id, articleId</li>
+</ul>
+<h3 id="4-3-comment-">4-3 comment 목록</h3>
+<ul>
+<li>method: GET</li>
+<li>url: localhost:3000/api/comments/:_id</li>
+<li>response: </li>
+</ul>
+<pre>
+  <code>
+[
+  {
+<span class="hljs-symbol">    userId:</span> <span class="hljs-string">"###"</span>,
+<span class="hljs-symbol">    userName:</span> <span class="hljs-string">"###"</span>,
+<span class="hljs-symbol">    articleId:</span> <span class="hljs-string">"###"</span>,
+<span class="hljs-symbol">    content:</span> <span class="hljs-string">"###"</span>,
+<span class="hljs-symbol">    createdAt:</span> <span class="hljs-string">"###"</span>,
+  },
+]
+  </code>
+</pre>
+  
+</body>

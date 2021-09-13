@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../style/mdl/material.min.css">
+  <script src="../style/mdl/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+  <link rel="stylesheet" href="../style/boxicon/css/boxicons.min.css">
+  <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+  <div class="mdl-layout__container">
+    <!-- start svelte-demo -->
+    <div class="svelte-demo mdl-color--grey-100 mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+
+            <!-- Title -->
+            <span class="mdl-layout-title">SLogs</span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link selected" href="#null">모두 보기</a>
+              <a class="mdl-navigation__link" href="#null">좋아요 보기</a>
+            </nav>
+            <i class="bx bx-log-out"></i>
+          
+        </div>
+      </header>
+      <!-- start main-->
+      <main class="mdl-layout__content">
+
+        <!--  start write article box -->
+        <div class="box mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__supporting-text ">
+              <div class="info-box">
+                <p>지금 여러분의 생각을 적어주세요.</p>
+              </div>
+
+            </div>              
+            <div class="mdl-card__supporting-text">
+            
+              <div class="mdl-textfield">
+                <textarea class="mdl-textfield__input" type="text" rows= "5" id="sample5" ></textarea>
+              </div>
+            
+            </div>
+            <div class="mdl-card__actions mdl-card--border btn-box">
+              <a href="#null" class="mdl-button mdl-js-button mdl-js-ripple-effect">입력</a>
+              <a href="#null" class="mdl-button mdl-js-button mdl-js-ripple-effect">취소</a>
+            </div>
+          </div>
+        </div><!-- end write article box start -->
+
+        <!-- satart article-wrap -->
+        <div class="articles-wrap">
+
+        </div><!-- end article-wrap -->    
+      </main><!-- end main-->
+
+    </div><!-- end svelte-demo -->
+  </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,246 @@
+/* start init *************************/
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+html, body {
+  font-family: 'Nanum Gothic', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+div, span, article, section, header, footer, p, ul, li, fieldset, legend, label, a, nav {
+  box-sizing: border-box; }
+
+/* end init *************************/
+/* start util *************************/
+i.bx {
+  cursor: pointer; }
+
+p {
+  margin-bottom: 0px; }
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end; }
+
+.flex-left {
+  display: flex;
+  justify-content: flex-start; }
+
+.flex-center {
+  display: flex;
+  justify-content: center; }
+
+.onCursur {
+  cursor: pointer; }
+
+.list-menu {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 999;
+  list-style: none;
+  height: auto;
+  width: auto;
+  min-width: 124px;
+  padding: 8px 0;
+  margin: 0;
+  z-index: 9999999;
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .list-menu li {
+    margin: 12px 20px; }
+
+.list-menu.is-show {
+  visibility: visible; }
+
+input::placeholder {
+  color: #dddddd; }
+
+textarea::placeholder {
+  color: #dddddd; }
+
+.pre {
+  white-space: pre-line;
+  word-wrap: break-word; }
+
+/* end util *************************/
+/* start custom design *************************/
+body {
+  color: #444444; }
+
+.mdl-layout__header-row {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px; }
+  .mdl-layout__header-row .mdl-navigation__link {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .mdl-layout__header-row .mdl-navigation a {
+    font-size: 17px;
+    font-weight: 700; }
+  .mdl-layout__header-row .mdl-navigation .selected {
+    font-size: 23px;
+    text-decoration: underline; }
+  .mdl-layout__header-row .mdl-navigation .blocked {
+    color: #cccccc;
+    cursor: default; }
+  .mdl-layout__header-row i.bx {
+    float: right;
+    font-size: 25px; }
+
+.mdl-layout__header {
+  z-index: 999; }
+
+.svelte-demo .mdl-layout__content {
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 1;
+  padding-top: 20px; }
+  .svelte-demo .mdl-layout__content p {
+    margin-bottom: 0px; }
+  .svelte-demo .mdl-layout__content .box {
+    position: relative;
+    margin-bottom: 20px;
+    max-width: 860px; }
+    .svelte-demo .mdl-layout__content .box button {
+      position: absolute;
+      top: 10px;
+      right: 10px; }
+    .svelte-demo .mdl-layout__content .box .cancel {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer; }
+    .svelte-demo .mdl-layout__content .box .mdl-button {
+      z-index: 10; }
+  .svelte-demo .mdl-layout__content .mdl-textfield {
+    width: 100%;
+    padding: 0; }
+    .svelte-demo .mdl-layout__content .mdl-textfield textarea {
+      background-color: #F3F3F3; }
+  .svelte-demo .mdl-layout__content .comment-box {
+    padding-bottom: 15px; }
+  .svelte-demo .mdl-layout__content .mdl-card {
+    min-height: auto; }
+    .svelte-demo .mdl-layout__content .mdl-card .mdl-card__supporting-text {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 0px;
+      color: #444444; }
+    .svelte-demo .mdl-layout__content .mdl-card .bottom-padding {
+      padding-bottom: 15px; }
+    .svelte-demo .mdl-layout__content .mdl-card .mdl-card--border {
+      padding: 10px;
+      margin-top: 16px;
+      margin-bottom: 0; }
+    .svelte-demo .mdl-layout__content .mdl-card .mdl-card__actions {
+      display: flex;
+      justify-content: space-between; }
+      .svelte-demo .mdl-layout__content .mdl-card .mdl-card__actions .icon-box i {
+        cursor: pointer; }
+    .svelte-demo .mdl-layout__content .mdl-card .btn-box {
+      display: flex;
+      justify-content: flex-end; }
+
+.auth .box {
+  max-width: 500px;
+  margin-top: 50px; }
+
+.auth .mdl-card {
+  padding: 15px; }
+
+.auth .mdl-textfield {
+  width: 100%; }
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .info-box .info {
+    display: flex;
+    justify-self: flex-start; }
+    .info-box .info h5, .info-box .info p {
+      margin-right: 10px; }
+
+.user-id {
+  font-weight: bold;
+  color: #444444; }
+
+.icon-box {
+  display: flex;
+  align-items: center; }
+  .icon-box i {
+    font-size: 20px;
+    margin-right: 3px; }
+
+.icon-box-comment {
+  display: flex;
+  align-items: center; }
+  .icon-box-comment i {
+    font-size: 20px;
+    margin-left: 3px; }
+
+.btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 10px 10px; }
+
+.mdl-list {
+  width: 100%;
+  padding: 0px; }
+  .mdl-list li {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px;
+    height: auto;
+    position: relative; }
+
+.comment-modal-bg {
+  display: none;
+  position: fixed;
+  /* Stay in place */
+  z-index: 99;
+  padding-top: 70px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  /* Full width */
+  height: 100vh;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: #F3F3F3;
+  /* Fallback color */ }
+  .comment-modal-bg .comment-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .comment-modal-bg .comment-wrap .box {
+      width: 100%; }
+    .comment-modal-bg .comment-wrap .mdl-list__item-primary-content {
+      height: auto; }
+
+.modal-show {
+  display: block; }
+
+/* start custom design *************************/
