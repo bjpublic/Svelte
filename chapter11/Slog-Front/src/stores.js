@@ -203,7 +203,7 @@ function setArticles() {
       alert('수정 완료');
     }
     catch(error) {
-      alert('수정중에 오류가 발생했습니다. 다시 시도해 주세요.');
+      alert('수정 중에 오류가 발생했습니다. 다시 시도해 주세요.');
     }
   }  
 
@@ -224,7 +224,7 @@ function setArticles() {
       });
     }
     catch(error) {
-      alert('삭제중 오류가 발생했습니다. ');
+      alert('삭제 중 오류가 발생했습니다. ');
     }
   }
 
@@ -449,7 +449,7 @@ function setComments() {
       update(datas => datas.filter(comment => comment._id !== _id));      
       articles.decreArticleCommentCount(articleId);
 
-      alert('커멘트가 삭제 되었습니다.');
+      alert('코멘트가 삭제되었습니다.');
 
     }
     catch(error) {
@@ -482,7 +482,7 @@ function setAuth() {
       const getUserInfo = await getApi({path: '/user'});
       set(getUserInfo)
     }
-    catch(error) { // 토큰이 비정상적을 때 리셋.
+    catch(error) { // 토큰이 비정상적일 때 리셋.
       auth.resetUserInfo();
       authToken.resetAuthToken();
     }    
@@ -547,7 +547,7 @@ function setAuthToken() {
       router.goto('/articles');
     }
     catch(error) {
-      alert('오류가 발생했습니다. 다시시도해 주세요.');
+      alert('오류가 발생했습니다. 다시 시도해 주세요.');
     }
   }
 

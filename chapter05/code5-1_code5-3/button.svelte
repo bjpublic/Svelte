@@ -1,8 +1,8 @@
 <script>
-import { getContext } from 'svelte'
+import { getContext } from 'svelte';
 
-let handleIncrementCount = getContext('incrementCount')
-let count = getContext('count')
+let handleIncrementCount = getContext('incrementCount');
+let count = getContext('count');
 </script>
 
 <button on:click={handleIncrementCount} >

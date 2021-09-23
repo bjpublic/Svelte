@@ -1,16 +1,15 @@
 <script>
-import { setContext } from 'svelte'
+import { setContext } from 'svelte';
+import Panel from './panel.svelte';
 
-import Panel from './panel.svelte'
-
-let count = 10
+let count = 10;
 
 function incrementCount(event) {
-  count ++
+  count ++;
 }
 
-setContext('incrementCount', incrementCount)
-setContext('count', count)
+setContext('incrementCount', incrementCount);
+setContext('count', count);
 
 </script>
 

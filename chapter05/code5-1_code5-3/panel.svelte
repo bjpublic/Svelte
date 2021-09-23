@@ -1,6 +1,6 @@
 <script>
-  import Button from './button.svelte'
-  export let count
+  import Button from './button.svelte';
+  export let count;
 </script>
 
 <div class="penal">

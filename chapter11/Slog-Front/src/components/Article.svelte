@@ -30,7 +30,7 @@
   }
 
   const onDeleteArticle = (_id) => {
-    if(confirm('삭제 하시겠습니까?')) {
+    if(confirm('삭제하시겠습니까?')) {
       articles.deleteArticle(_id);
     }
     else {

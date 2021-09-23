@@ -13,7 +13,7 @@
       await contentValidate.validate(values, {abortEarly: false});
       await articles.addArticle(values.formContent);
       onCancelAddArticle();
-      alert('새글이 입력되었습니다.');
+      alert('새 글이 입력되었습니다.');
     }
     catch(error) {
       errors = extractErrors(error);

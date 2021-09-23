@@ -6,7 +6,7 @@
   export let articleId;
 
   const onDeleteComment = () => {
-    if(confirm('삭제 하시겠습니까?')) {
+    if(confirm('삭제하시겠습니까?')) {
       comments.deleteComment(comment._id, articleId);
     }
     else {
