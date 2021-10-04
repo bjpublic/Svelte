@@ -7,6 +7,7 @@
   const onLogout = () => authToken.logout();
 
   const onViewModeChange = (mode) => {
+    router.goto('/articles');
     articlesMode.changeMode(mode);
   }  
   
