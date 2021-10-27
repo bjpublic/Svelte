@@ -1,11 +1,9 @@
-import { writable } from 'svelte/store';
+<script>
+  import { count } from './store.js';
 
-export const count = writable(0);<script>
-import { count } from './store.js';
-
-function reset() {
-  count.set(0);
-}
+  function reset() {
+    count.set(0);
+  }
 
 </script>
 
