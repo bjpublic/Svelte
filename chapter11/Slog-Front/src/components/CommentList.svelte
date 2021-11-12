@@ -77,7 +77,7 @@
           </div>
         </div>
         <div class="btn-box">
-          <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect" on:click={onAddComment}>입력</a>
+          <a href="#null" class="mdl-button mdl-js-button mdl-js-ripple-effect" on:click={onAddComment}>입력</a>
         </div>
         {/if}
       </div>

@@ -1,5 +1,5 @@
 <script>
-    import { fade, fly } from 'svelte/transition'; 
+  import { fade, fly } from 'svelte/transition'; 
   export let modalActive = false
   
   function close() {
@@ -27,8 +27,7 @@
     <slot name="content"></slot>
     <hr>
 
-    <!-- svelte-ignore a11y-autofocus -->
-    <button autofocus on:click={close}>close modal</button>
+    <button on:click={close}>close modal</button>
   </div>
 {/if}
 

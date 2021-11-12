@@ -10,7 +10,7 @@
   h2 {
     padding: 0 0 0.2em 0;
     margin: 0 0 1em 0;
-    border-bottom: 1px solid #ff3e00
+    border-bottom: 1px solid #ff3e00;
   }
 
   .address, .email {

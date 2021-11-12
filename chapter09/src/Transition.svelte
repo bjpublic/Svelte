@@ -1,6 +1,6 @@
 <!-- Transition.svelte -->
 <script>
-    import {router} from 'tinro';
+    import { router } from 'tinro';
     import { fade, slide, fly } from 'svelte/transition';
 </script>
 

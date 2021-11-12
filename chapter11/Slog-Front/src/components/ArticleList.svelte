@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { articles, currentArticlesPage, loadingArticle, articlePageRock } from '../stores';
+  import { articles, currentArticlesPage, loadingArticle, articlePageLock } from '../stores';
   import Article from './Article.svelte';
 
   let component;
@@ -36,11 +36,11 @@
     }
 
     if(countCheck()) {  
-      articlePageRock.set(true);
+      articlePageLock.set(true);
     }    
 
     const scrollTrigger = () => {
-      return triggerComputed() && !$articlePageRock;
+      return triggerComputed() && !$articlePageLock;
     }    
 
     if(scrollTrigger()) {

@@ -5,7 +5,7 @@ function writer(node, setSpeed) { // setSpeed를 인자로 받아옴
   let speed = setSpeed
 
   const write = function() {
-    if (count < txt.length) {
+    if(count < txt.length) {
       node.innerHTML += txt.charAt(count);
       count++;
       setTimeout(() => write(node, speed), speed);

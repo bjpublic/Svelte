@@ -17,7 +17,7 @@
   // const onLogin = async () => {
   //   try {
   //     await authToken.login(values.formEmail, values.formPassword);
-  //     resetValues;
+  //     resetValues();
   //   }
   //   catch(error) {
   //     console.log(error);
@@ -29,7 +29,7 @@
     try {
       await loginValidate.validate(values, {abortEarly: false})
       await authToken.login(values.formEmail, values.formPassword);
-      resetValues;
+      resetValues();
       
     }
     catch(error) {
@@ -58,7 +58,7 @@
         <input class="mdl-textfield__input" type="text" placeholder="이메일" bind:value={values.formEmail} class:wrong={errors.formEmail}>
       </div>
       <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" placeholder="패스워드" bind:value={values.formPassword} class:wrong={errors.formPassword}>
+        <input class="mdl-textfield__input" type="password" placeholder="패스워드" bind:value={values.formPassword} class:wrong={errors.formPassword}>
       </div>          
       <div class="mdl-card__actions btn-box">
         <a href="#null" class="mdl-button mdl-js-button mdl-js-ripple-effect" on:click={onLogin} >로그인</a>

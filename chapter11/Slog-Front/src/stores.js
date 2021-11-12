@@ -114,7 +114,7 @@ function setArticles() {
 
     set(resetValue);
     currentArticlesPage.resetPage(); 
-    articlePageRock.set(false);
+    articlePageLock.set(false);
   }
 
   const addArticle = async (content) => {
@@ -340,11 +340,11 @@ function setLoadingArticle() {
 
   const turnOnLoading = () => {
     set(true);
-    articlePageRock.set(true);
+    articlePageLock.set(true);
   } 
   const turnOffLoading = () => {
     set(false);
-    articlePageRock.set(false);
+    articlePageLock.set(false);
   }
 
   return {
@@ -582,7 +582,7 @@ function setAuthToken() {
 export const currentArticlesPage = setCurrentArticlesPage();
 export const articles = setArticles();
 export const loadingArticle = setLoadingArticle();
-export const articlePageRock = writable(false);
+export const articlePageLock = writable(false);
 export const articleContent = setArticleContent();
 export const articlesMode = setArticleMode();
 export const comments = setComments();

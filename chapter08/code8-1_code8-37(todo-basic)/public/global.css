@@ -126,13 +126,11 @@ header input {
   flex-direction: column;
   align-items: center;
   box-shadow: 10px 5px 5px #e7e7e7;   
-  
+
   overflow-y: scroll;
   /* 스크롤 숨기고 스크롤은 되게: IE, Edge, Firefox */
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */       
 }
 
 .main::-webkit-scrollbar  {

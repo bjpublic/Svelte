@@ -47,10 +47,10 @@
         <input class="mdl-textfield__input" type="text" placeholder="이메일" bind:value={values.formEmail} class:wrong={errors.formEmail}  >
       </div>
       <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" placeholder="비밀번호" bind:value={values.formPassword} class:wrong={errors.formPassword} >
+        <input class="mdl-textfield__input" type="password" placeholder="비밀번호" bind:value={values.formPassword} class:wrong={errors.formPassword} >
       </div>
       <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" placeholder="비밀번호 확인" bind:value={values.formPasswordConfirm} class:wrong={errors.formPasswordConfirm} >
+        <input class="mdl-textfield__input" type="password" placeholder="비밀번호 확인" bind:value={values.formPasswordConfirm} class:wrong={errors.formPasswordConfirm} >
       </div>          
       <div class="mdl-card__actions btn-box">
         <a href="#null" class="mdl-button mdl-js-button mdl-js-ripple-effect" on:click={onRegister} >회원가입</a>

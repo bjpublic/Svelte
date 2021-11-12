@@ -3,13 +3,13 @@
   export let count;
 </script>
 
-<div class="penal">
+<div class="panel">
   <h1>{count}</h1>
   <Button />
 </div>
 
 <style>
-  .penal {
+  .panel {
     padding: 20px;
     display:flex;
     flex-direction: column;
